@@ -40,8 +40,15 @@ class ViewController: UIViewController {
         contentView.reloadData()
         
         eventSubject.asObservable()
-            .subscribe(onNext: { event in
-                print("tttt event: \(event)")
+            .subscribe(onNext: { [weak self] event in
+                switch event {
+                    
+                case .demo1:
+                    self?.openController(SampleShimmerController1())
+                    break
+                case .demo2:
+                    break
+                }
             })
             .disposed(by: disposeBag)
     }

@@ -8,14 +8,34 @@
 import UIKit
 import Alidade
 
+class MyCustomNavigation: UINavigationController {
+  
+  override var shouldAutorotate: Bool {
+    return false
+  }
+  
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return .portrait
+  }
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    public var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UI.setBaseWidths([.pad: 768, .phone: 375])
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = .white
+        
+        
+        let controller = MyCustomNavigation(rootViewController: ViewController())
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+        self.window = window
         // Override point for customization after application launch.
         return true
     }
