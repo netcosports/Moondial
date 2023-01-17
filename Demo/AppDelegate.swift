@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alidade
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UI.setBaseWidths([.pad: 768, .phone: 375])
         // Override point for customization after application launch.
         return true
     }
