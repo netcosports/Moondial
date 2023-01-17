@@ -11,6 +11,10 @@ import RxSwift
 
 class SampleShimmerController1: UIViewController, UIGestureRecognizerDelegate {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .magenta
+    }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

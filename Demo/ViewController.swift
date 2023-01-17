@@ -59,7 +59,8 @@ class ViewController: UIViewController {
     }
     
     private func openController(_ controller: UIViewController) {
-      self.navigationController?.pushViewController(controller, animated: true)
+        self.present(controller, animated: true)
+//      self.navigationController?.pushViewController(controller, animated: true)
     }
 
     typealias Cell = CollectionCell<HomeCollectionCell>
