@@ -7,6 +7,7 @@
 
 import UIKit
 import Alidade
+import Moondial
 
 class MyCustomNavigation: UINavigationController {
   
@@ -30,6 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white
+        
+        MoondialSettings.set(shimmerColors: [
+            UIColor.magenta.withAlphaComponent(0.04).cgColor,
+            UIColor.magenta.withAlphaComponent(0.9).cgColor,
+            UIColor.cyan.withAlphaComponent(0.14).cgColor,
+            UIColor.magenta.withAlphaComponent(0.9).cgColor,
+            UIColor.magenta.withAlphaComponent(0.04).cgColor
+        ])
+        MoondialSettings.set(animationDurationInMillis: 1.8)
         
         
         let controller = MyCustomNavigation(rootViewController: ViewController())

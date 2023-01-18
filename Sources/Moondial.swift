@@ -12,9 +12,7 @@ import RxSwift
 import RxCocoa
 
 
-@objc public class MoondialSettings: NSObject {
-    
-    private override init() {}
+public class MoondialSettings {
     
     static var shimmerColors: [CGColor] = [
         UIColor(red: 0, green: 0, blue: 0, alpha: 0.01).cgColor,
@@ -24,12 +22,13 @@ import RxCocoa
         UIColor(red: 0, green: 0, blue: 0, alpha: 0.02).cgColor
     ]
     
+    static var animationDuration = 1.3
     
-    @objc static func setShimmerColors(colors: [CGColor]) {
-        Self.shimmerColors = colors
+    public static func set(shimmerColors: [CGColor]) {
+        Self.shimmerColors = shimmerColors
     }
     
-    @objc static func setShimmerAnimationDuration(millis: Int) {
-        
+    public static func set(animationDurationInMillis: Double) {
+        Self.animationDuration = animationDurationInMillis
     }
 }

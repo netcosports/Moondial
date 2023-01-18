@@ -179,7 +179,7 @@ extension Shimmer {
     let animation = CABasicAnimation(keyPath: "locations")
     animation.fromValue = colorLayer.locations
     animation.toValue = [NSNumber(value: 0), NSNumber(value: 1), NSNumber(value: 1), NSNumber(value: 1.2), NSNumber(value: 1.2)]
-    animation.duration = 1.3
+      animation.duration = MoondialSettings.animationDuration
     animation.repeatCount = HUGE
     animation.isRemovedOnCompletion = false
     colorLayer.add(animation, forKey: "locations-layer")
