@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moondial
 
 extension UIView {
 
@@ -26,6 +27,24 @@ extension UIView {
   func addSubviews(_ subviews: UIView...) {
     subviews.forEach {
       addSubview($0)
+    }
+  }
+}
+
+extension ShimmerView {
+
+  static var hexagonShaper: (CGRect) -> UIBezierPath {
+    return { rect in
+      let offset: CGFloat = 10.ui
+      let path = UIBezierPath()
+      path.move(to: CGPoint(x: rect.minX, y: rect.midY))
+      path.addLine(to: CGPoint(x: rect.minX + offset, y: rect.maxY))
+      path.addLine(to: CGPoint(x: rect.maxX - offset, y: rect.maxY))
+      path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+      path.addLine(to: CGPoint(x: rect.maxX - offset, y: rect.minY))
+      path.addLine(to: CGPoint(x: rect.minX + offset, y: rect.minY))
+      path.close()
+      return path
     }
   }
 }
