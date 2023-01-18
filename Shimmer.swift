@@ -146,13 +146,7 @@ extension Shimmer {
 
     colorLayer.startPoint = CGPoint(x: -1.4, y: 0)
     colorLayer.endPoint = CGPoint(x: 1.4, y: 0)
-    colorLayer.colors = [
-      UIColor(red: 0, green: 0, blue: 0, alpha: 0.01).cgColor,
-      UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor,
-      UIColor(red: 1, green: 1, blue: 1, alpha: 0.009).cgColor,
-      UIColor(red: 0, green: 0, blue: 0, alpha: 0.04).cgColor,
-      UIColor(red: 0, green: 0, blue: 0, alpha: 0.02).cgColor
-    ]
+    colorLayer.colors = MoondialSettings.shimmerColors
     colorLayer.locations = [
       NSNumber(value: Double(colorLayer.startPoint.x)),
       NSNumber(value: Double(colorLayer.startPoint.x)),

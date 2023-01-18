@@ -81,13 +81,14 @@ class ShimmerDemoView: UIView, ShimmersContainer {
         super.layoutSubviews()
         logo.pin.top(10.ui).start(20.ui).size(40.ui)
         text.pin.after(of: logo).vCenter(to: logo.edge.vCenter).marginStart(10.ui).sizeToFit()
-        text2.pin.end(10.ui).vCenter().sizeToFit()
+        text2.pin.after(of: text).vCenter(to: logo.edge.vCenter).marginStart(20.ui).sizeToFit()
     }
     
     var shimmers: [ShimmerSettings] {
        return [
         logo.shimmer(style: .transparent).width(40.ui).height(40.ui),
-        text.shimmer(style: .transparent)
+        text.shimmer(style: .transparent),
+        text2.shimmer(style: .hidden)
        ]
     }
     

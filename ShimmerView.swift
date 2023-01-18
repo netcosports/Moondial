@@ -46,7 +46,6 @@ public class ShimmerView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.realContent?.frame = self.bounds
-//        self.realContent?.pin.all()
         guard realContent?.alpha == 0.0 else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
             self.shimmer.handleBoundChange(self.shimmers, rootView: self)
