@@ -36,26 +36,26 @@ protocol Shimmerable {
     var subshimmers: [Shimmerable] { get }
 }
 
-protocol ShimmerConvertible {
+public protocol ShimmerConvertible {
     func asShimmers() -> [ShimmerSettings]
 }
 
 extension ShimmerSettings: ShimmerConvertible {
     
-    func asShimmers() -> [ShimmerSettings] {
+    public func asShimmers() -> [ShimmerSettings] {
         [self]
     }
 }
 
 extension Array: ShimmerConvertible where Element == ShimmerSettings {
-    func asShimmers() -> [ShimmerSettings] { self }
+    public func asShimmers() -> [ShimmerSettings] { self }
 }
 
-@resultBuilder struct ShimmerBuilder {
+@resultBuilder public struct ShimmerBuilder {
     
     typealias Component = ShimmerConvertible
     
-    static func buildBlock(_ components: ShimmerConvertible...) -> [ShimmerConvertible] {
+    public static func buildBlock(_ components: ShimmerConvertible...) -> [ShimmerConvertible] {
         components
     }
 }

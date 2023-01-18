@@ -13,9 +13,28 @@ import PinLayout
 
 class SampleShimmerController1: UIViewController, UIGestureRecognizerDelegate {
     
+    private let shimmerView1 = ShimmerDemoView()
+    private let shimmerView2 = ShimmerDemoView()
+    
+    private lazy var shimmerView = ShimmerView(shimmers: {
+        shimmerView2.shimmers
+    })
+    
+    private let realContentView = UIView() // required
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .magenta
+        self.view.backgroundColor = .white
+        self.view.addSubviews(shimmerView1, shimmerView2)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        shimmerView1.pin.top(self.view.safeAreaInsets.top + 40.ui).horizontally(10.ui)
+            .height(60.ui)
+        
+        shimmerView2.pin.below(of: shimmerView1).marginTop(20.ui).horizontally(10.ui)
+            .height(60.ui)
     }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -26,12 +45,25 @@ class SampleShimmerController1: UIViewController, UIGestureRecognizerDelegate {
 class ShimmerDemoView: UIView, ShimmersContainer {
     
     private let logo = UIImageView()
-    private let text = UILabel()
+    private let text = UILabel {
+        $0.textColor = .black
+    }
+    
+    private let text2 = UILabel {
+        $0.textColor = .black
+    }
+    
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubviews(logo, text)
+        self.addSubviews(logo, text, text2)
+        logo.backgroundColor = .random
         text.text = "Demo Text!!!"
+        text2.text = "Text to Hide"
+        self.layer.borderColor = UIColor.magenta.cgColor
+        self.layer.borderWidth = 2.ui
+        self.layer.cornerRadius = 10.ui
     }
     
     required init?(coder: NSCoder) {
@@ -40,8 +72,9 @@ class ShimmerDemoView: UIView, ShimmersContainer {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        logo.pin.vCenter().start(20.ui)
-        text.pin.after(of: logo).vCenter().marginStart(10.ui).sizeToFit(.width)
+        logo.pin.vCenter().start(20.ui).size(40.ui)
+        text.pin.after(of: logo).vCenter().marginStart(10.ui).sizeToFit()
+        text2.pin.end(10.ui).vCenter().sizeToFit()
     }
     
     var shimmers: [ShimmerSettings] {

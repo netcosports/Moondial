@@ -8,13 +8,13 @@
 import UIKit
 
 
-class ShimmerView: UIView {
+public class ShimmerView: UIView {
     
     private let shimmer = Shimmer()
     fileprivate let shimmers: [ShimmerSettings]
     fileprivate var realContent: UIView?
     
-    init(@ShimmerBuilder shimmers: () -> [ShimmerConvertible]) {
+    public init(@ShimmerBuilder shimmers: () -> [ShimmerConvertible]) {
         self.shimmers = shimmers().flatMap { $0.asShimmers() }
         super.init(frame: .zero)
         setup()
@@ -43,7 +43,7 @@ class ShimmerView: UIView {
         clipsToBounds = true
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         self.realContent?.frame = self.bounds
 //        self.realContent?.pin.all()
