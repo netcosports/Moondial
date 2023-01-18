@@ -25,7 +25,14 @@ class SampleShimmerController1: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.view.addSubviews(shimmerView1, shimmerView2)
+        self.view.addSubviews(shimmerView1, shimmerView)
+        shimmerView.addSubviews(shimmerView2)
+        shimmerView.set(realContentView: realContentView)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            self.shimmerView.startShimmer()
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -33,7 +40,7 @@ class SampleShimmerController1: UIViewController, UIGestureRecognizerDelegate {
         shimmerView1.pin.top(self.view.safeAreaInsets.top + 40.ui).horizontally(10.ui)
             .height(60.ui)
         
-        shimmerView2.pin.below(of: shimmerView1).marginTop(20.ui).horizontally(10.ui)
+        shimmerView.pin.below(of: shimmerView1).marginTop(20.ui).horizontally(10.ui)
             .height(60.ui)
     }
     
@@ -72,8 +79,8 @@ class ShimmerDemoView: UIView, ShimmersContainer {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        logo.pin.vCenter().start(20.ui).size(40.ui)
-        text.pin.after(of: logo).vCenter().marginStart(10.ui).sizeToFit()
+        logo.pin.top(10.ui).start(20.ui).size(40.ui)
+        text.pin.after(of: logo).vCenter(to: logo.edge.vCenter).marginStart(10.ui).sizeToFit()
         text2.pin.end(10.ui).vCenter().sizeToFit()
     }
     

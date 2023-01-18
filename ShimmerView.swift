@@ -53,20 +53,20 @@ public class ShimmerView: UIView {
         }
     }
     
-    func set(realContentView: UIView) {
+    public func set(realContentView: UIView) {
         self.realContent = realContentView
         self.subviews.forEach { $0.alpha = 0.0 }
         self.addSubview(realContentView)
     }
     
-    func startShimmer() {
+    public func startShimmer() {
         guard realContent?.alpha == 1.0 else { return }
         self.subviews.forEach { $0.alpha = 1.0 }
         realContent?.alpha = 0.0
         shimmer.coverSubviews(shimmers, rootView: self)
     }
     
-    func stopShimmer() {
+    public func stopShimmer() {
         guard realContent?.alpha == 0.0 else { return }
         UIView.animate(withDuration: 0.22, animations: {
             self.subviews.forEach {
