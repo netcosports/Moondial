@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import Astrolabe
-import RxSwift
-import RxCocoa
-
 
 public class MoondialSettings {
     
