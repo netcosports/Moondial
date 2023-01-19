@@ -7,13 +7,11 @@ install! 'cocoapods', :disable_input_output_paths => true
 
 target 'Demo' do
   pod 'Moondial', :path => '.', :inhibit_warnings => false
-  pod 'SnapKit'
 
   pod 'Astrolabe', :git => 'git@github.com:netcosports/Astrolabe.git', :branch => 'kmm'
   
   pod 'PinLayout'
-  pod 'Nocturnal', :git => 'git@github.com:netcosports/Nocturnal.git', :branch => 'kmm'
-  pod 'Sundial', :git => 'git@github.com:netcosports/Sundial.git', :branch => 'kmm'
+  pod 'RxGesture'
   pod 'Alidade', :git => 'git@github.com:netcosports/Alidade.git', :branch => 'kmm'
 end
 
