@@ -3,8 +3,7 @@ PODS:
   - Astrolabe (6.0.0):
     - RxCocoa (~> 6)
     - RxSwift (~> 6)
-  - Moondial (1.0.0):
-    - Astrolabe (~> 6)
+  - Moondial (1.0.0)
   - PinLayout (1.10.3)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -52,7 +51,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alidade: dd266774e98322fb53c115c459fc3482ef9be086
   Astrolabe: 29b16a5fa299a352001433bdf92fb1bbb9207b19
-  Moondial: 053a8b76b0852c8646c69ecdba134483bfdc4087
+  Moondial: 9abf0b9dce55ca54801fde03b2fbbb69450a5b0e
   PinLayout: 0090ccbf29ae69af6ae5a15eaeaf27ed7b2c4d83
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8

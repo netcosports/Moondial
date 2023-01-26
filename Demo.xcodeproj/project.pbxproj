@@ -10,6 +10,7 @@
 		928102712976D3FA0075387F /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928102702976D3FA0075387F /* UIView+extensions.swift */; };
 		928102732976D5800075387F /* SampleShimmerController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928102722976D5800075387F /* SampleShimmerController1.swift */; };
 		928102752976D8950075387F /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928102742976D8950075387F /* HomeCollectionCell.swift */; };
+		929A3C6B29815FDE008BB38C /* ShimerDemoView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A3C6A29815FDE008BB38C /* ShimerDemoView2.swift */; };
 		92A03B1F2976C11C005A7611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A03B1E2976C11C005A7611 /* AppDelegate.swift */; };
 		92A03B212976C11C005A7611 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A03B202976C11C005A7611 /* SceneDelegate.swift */; };
 		92A03B232976C11C005A7611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A03B222976C11C005A7611 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		928102702976D3FA0075387F /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		928102722976D5800075387F /* SampleShimmerController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleShimmerController1.swift; sourceTree = "<group>"; };
 		928102742976D8950075387F /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
+		929A3C6A29815FDE008BB38C /* ShimerDemoView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimerDemoView2.swift; sourceTree = "<group>"; };
 		92A03B1B2976C11C005A7611 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A03B1E2976C11C005A7611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A03B202976C11C005A7611 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				928102702976D3FA0075387F /* UIView+extensions.swift */,
 				928102722976D5800075387F /* SampleShimmerController1.swift */,
 				928102742976D8950075387F /* HomeCollectionCell.swift */,
+				929A3C6A29815FDE008BB38C /* ShimerDemoView2.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				92A03B232976C11C005A7611 /* ViewController.swift in Sources */,
 				92A03B1F2976C11C005A7611 /* AppDelegate.swift in Sources */,
 				928102712976D3FA0075387F /* UIView+extensions.swift in Sources */,
+				929A3C6B29815FDE008BB38C /* ShimerDemoView2.swift in Sources */,
 				928102752976D8950075387F /* HomeCollectionCell.swift in Sources */,
 				92A03B212976C11C005A7611 /* SceneDelegate.swift in Sources */,
 			);

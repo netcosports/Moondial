@@ -7,12 +7,12 @@
 
 import UIKit
 
-
 public class ShimmerView: UIView {
     
     private let shimmer = Shimmer()
     fileprivate let shimmers: [ShimmerSettings]
     fileprivate var realContent: UIView?
+    
     
     public init(@ShimmerBuilder shimmers: () -> [ShimmerConvertible]) {
         self.shimmers = shimmers().flatMap { $0.asShimmers() }
@@ -41,15 +41,17 @@ public class ShimmerView: UIView {
     
     open func setup() {
         clipsToBounds = true
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+//            self.shimmer.handleBoundChange(self.shimmers, rootView: self)
+//        }
+
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.realContent?.frame = self.bounds
         guard realContent?.alpha == 0.0 else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
-            self.shimmer.handleBoundChange(self.shimmers, rootView: self)
-        }
+
     }
     
     public func set(realContentView: UIView) {
@@ -59,6 +61,7 @@ public class ShimmerView: UIView {
     }
     
     public func startShimmer() {
+        stopShimmer()
         guard realContent?.alpha == 1.0 else { return }
         self.subviews.forEach { $0.alpha = 1.0 }
         realContent?.alpha = 0.0
