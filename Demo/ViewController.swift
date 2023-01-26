@@ -47,6 +47,7 @@ class ViewController: UIViewController {
                     self?.openController(SampleShimmerController1())
                     break
                 case .demo2:
+                    self?.openController(SampleShimmerController2())
                     break
                 }
             })

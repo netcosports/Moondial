@@ -84,6 +84,18 @@ public class ShimmerSettings: Shimmerable {
         return self
     }
     
+    public func size(_ size: CGFloat) -> ShimmerSettings {
+        self.width = size
+        self.height = size
+        return self
+    }
+    
+    public func size(_ size: CGSize) -> ShimmerSettings {
+        self.width = size.width
+        self.height = size.height
+        return self
+    }
+    
     public func cornerRadius(_ value: CGFloat) -> ShimmerSettings {
         self.cornerRadius = value
         return self
