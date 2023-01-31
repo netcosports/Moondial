@@ -37,7 +37,16 @@ class ShimmerDemoView: UIView, ShimmersContainer {
     shimmerView.set(realContentView: realContentView)
 ```
 
-4. You don't need to layout child shimmer view. It will fill the whole parent.
+4. You don't need to layout real content view. It will fill the whole parent.
+
+```
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        demoView1.pin.top(50.ui).horizontally().height(120.ui)
+        shimmerView.pin.below(of: demoView1).marginTop(20.ui).horizontally().height(120.ui)
+        demoView2.pin.all()
+    }
+```
 
 To start / stop shimmer use next code:
 
